@@ -1,7 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
+import { ProjectListenScreen } from "screens/project-list";
 
-export default class App extends Component {
-  render() {
-    return <div>111</div>;
-  }
-}
+const App = () => {
+  return (
+    <div className="App">
+      <ProjectListenScreen />
+    </div>
+  );
+};
+
+export default App;
