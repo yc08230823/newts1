@@ -17,7 +17,6 @@ export const ProjectListenScreen = () => {
 
   useEffect(() => {
     fetch(`${apiUrl}/projects?${qs.stringify(cleanObject(param))}`).then(async response => {
-      console.log(response)
       if (response.ok) {
         setList(await response.json())
       }
@@ -26,7 +25,6 @@ export const ProjectListenScreen = () => {
 
   useEffect(() => {
     fetch(`${apiUrl}/users`).then(async response => {
-      console.log(response)
       if (response.ok) {
         setUsers(await response.json())
       }
@@ -36,7 +34,7 @@ export const ProjectListenScreen = () => {
   return (
     <div>
       <SearchPanel users={users} param={param} setParam={setParam} />
-      <List users={users} list={list} setList={setList} />
+      <List users={users} list={list} />
     </div>
   )
 }
