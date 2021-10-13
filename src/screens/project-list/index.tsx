@@ -7,13 +7,13 @@ import { cleanObject, useMount, useDebounce } from "../../utils";
 const apiUrl = process.env.REACT_APP_API_URL;
 
 export const ProjectListenScreen = () => {
+  const [users, setUsers] = useState([]);
   const [param, setParam] = useState({
     name: "",
     personId: "",
   });
   const debouncedParam = useDebounce(param, 1000);
   const [list, setList] = useState([]);
-  const [users, setUsers] = useState([]);
   // useDebounce = (value, delay)
   useEffect(() => {
     fetch(
